@@ -29,8 +29,7 @@ public class Main {
             Thing lips = new Thing("губам");
             Thing paw = new Thing("лапу");
             Thing whisper = new Thing("шепотом");
-            winniePooh.makeSure(Actions.LOOK_AROUND, Actions.MAKE_SURE, nothing);
-            winniePooh.tellSecret(paw, lips, Actions.SAYING, whisper);
+            winniePooh.makeSure(Actions.LOOK_AROUND, Actions.MAKE_SURE, nothing, paw, lips, Actions.SAYING, whisper);
 
             //Ну, а как раз накануне Кристофер Робин был на вечере у своего друга Пятачка
             Place eveningFriend = new Place("вечере у своего друга");
@@ -73,7 +72,7 @@ public class Main {
             };
             question.solve();
         } catch (NoNameException e) {
-            System.out.println("Задайте персонажу имя");
+            System.out.println(e.getMessage());
         }
     }
 }
